@@ -22,5 +22,4 @@ public class ReverseString {
 		System.out.println(reverse(name));
 		
 	}
-
 }
