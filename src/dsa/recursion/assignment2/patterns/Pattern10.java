@@ -1,18 +1,17 @@
 package dsa.recursion.assignment2.patterns;
+
 /*
-
- 	* 
-   ***
-  *****
- *******
-  ***** 
-   ***
+     *
     *
+   *
+  *
+ *
+*
 
-*/
+ */
 
-public class Pattern9 {
-	
+public class Pattern10 {
+
 	private static void printSpace(int row) {
 		
 		// base case
@@ -27,7 +26,7 @@ public class Pattern9 {
 		printSpace(row-1);
 		
 	}
-	
+
 	private static void printStar(int star) {
 		
 		// base case
@@ -40,44 +39,33 @@ public class Pattern9 {
 		
 		// small problem
 		printStar(star-1);
-	
+		
 	}
-	
-	private static void printLine(int row, int star, int n) {
+
+	private static void printLine(int row, int star, int rspace) {
 		// base case
 		if(row == 0)
 			return ;
 		
 		// buisness logic
 		printSpace(row -1);
-		printStar(2*star +1);
+		printStar(star);
+		printSpace(rspace);
 		System.out.println();
 		
 		
 		// small problem
-		printLine(row-1, star+1, n);
-		
-		if(row == n) {
-			return;
-		}
-			printSpace(row);
-			printStar(2*star - 1);
-			System.out.println();
-			
+		printLine(row-1, star, rspace+1);
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		// two approaches
+		int row = 7;
+		int star = 1;
+		int rspace = 0;
 		
-		int row = 4;
-		int star = 0;
-		int n = row;
-		
-		// stack building
-		printLine(row, star, n);
-	
-
+		printLine(row, star, rspace);
 	}
+
 }
