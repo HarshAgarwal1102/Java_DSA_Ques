@@ -20,6 +20,7 @@ public class EmployeeSalary {
         int[] remainingSalaries = addTax(salaries, taxRate, index + 1);
         int[] updatedSalaries = new int[remainingSalaries.length + 1];
         updatedSalaries[0] = updatedSalary;
+        
         for (int i = 0; i < remainingSalaries.length; i++) {
             updatedSalaries[i + 1] = remainingSalaries[i];
         }
