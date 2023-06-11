@@ -12,7 +12,7 @@ public class ArrayReturnList {
 		squares(list, index+1, size);
 		// logic
 		int element = list.get(index);
-		list.set(index, element);
+		list.set(index, element*element);
 		
 		return list;
 	}
@@ -45,8 +45,16 @@ public class ArrayReturnList {
 		// stack building
 		square(list, index, size);
 		
+		ArrayList<Integer> list1 = new ArrayList<Integer>();
+		list1.add(10);
+		list1.add(20);
+		list1.add(30);
+		list1.add(40);
+		int index1 =0;
+		int size1 = list1.size();
+		
 		// stack falling
-		System.out.println(squares(list, index, size));
+		System.out.println(squares(list1, index1, size1));
 	}
 
 }
