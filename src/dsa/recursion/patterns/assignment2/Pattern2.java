@@ -1,78 +1,52 @@
 package dsa.recursion.patterns.assignment2;
 
-//nested recursion
 /*
-
-*****
-****
-***
-**
-* 
-
-*/
+ ******
+ *    *
+ *    *
+ *    *
+ ******
+ */
 
 public class Pattern2 {
-
-	private static void printStar(int star) {
-		
+	
+	private static int printStar(int col, int row,  int n) {
 		// base case
-		if(star == 0)
-			return;
+		if(col == n) {
+			return -1;
+		}
 		
-		// buisness logic
-		System.out.print("*");
-		
+		// logic
+		if(row == 0 || row == n-1 || col ==0 || col == n-1) {
+			System.out.print("*");
+		}else {
+			System.out.print(" ");
+		}
 		
 		// small problem
-		printStar(star-1);
-	
+		return printStar(col +1, row, n);
 	}
 	
-	private static void printLine(int row, int star) {
+	private static void print(int row, int n) {
 		// base case
-		if(row == 0)
+		if(row == n) {
 			return ;
+		}
 		
 		// buisness logic
-		printStar(star);
-		System.out.println();
+		
+		printStar(0,row, n);
+		System.out.println("");
 		
 		
-		// small problem
-		printLine(row-1, star-1);
+		// smaller problem 
+		print(row+1,n);
 	}
-	
-	private static void printLine(int row) {
-		// base case
-		if(row == 0)
-			return ;
-		
-		
-		// small problem
-		printLine(row-1);
-		
-		
-		// buisness logic
-		printStar(row);
-		System.out.println();
-		
-	}
-	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		// two approaches
-		
-		int row = 5;
-		int star = 5;
-		
-		// stack building
-		printLine(row, star);
-		
-		// stack falling
-		printLine(row);
-
+		print(0, 5);
 	}
 
 }
