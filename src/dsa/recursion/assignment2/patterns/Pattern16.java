@@ -25,44 +25,47 @@ private static void printSpace(int row) {
 		
 	}
 
-	private static void printStar(int star) {
+	private static void printStar(int row, int col, int n) {
 		
 		// base case
-		if(star == 0)
+		if(col == ((2*n) -(2*row -1))) {
+			//System.out.println();
 			return;
+		}
 		
 		// buisness logic
-		System.out.print("*");
+		if(row==1 || col ==0 || col == (((2*n) -(2*row -1)) -1)) {
+			System.out.print("*");
+		}
+		else
+			System.out.print(" ");
+		
 		
 		
 		// small problem
-		printStar(star-1);
+		printStar(row, col+1, n);
 		
 	}
 
-	private static void printLine(int row, int rspace, int midSpace) {
+	private static void printLine(int row, int col, int n, int s) {
 		// base case
 		if(row == 0)
 			return ;
 		
 		// buisness logic
-		printSpace(rspace);
-		printStar((2*row)-1);
+		printSpace(s);
+		printStar(row, col, n);
 		System.out.println();
 		
 		
 		// small problem
-		printLine(row-1, rspace+1, midSpace);
+		printLine(row+1, col, n, s+1);
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int row = 5;
-		int rspace = 0;
-		int midSpace = 0;
-		
-		printLine(row, rspace, midSpace);
+		printLine(1, 0, 5, 0);
 	}
 
 }
