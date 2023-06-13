@@ -8,7 +8,8 @@ public class DecimalToBinary {
         } else if (decimal == 1) {
             return "1";
         } else {
-            return decimalToBinary(decimal / 2) + Integer.toString(decimal % 2);
+        	String value = Integer.toString(decimal % 2);
+            return decimalToBinary(decimal / 2) + value;
         }
     }
 

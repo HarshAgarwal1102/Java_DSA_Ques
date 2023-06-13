@@ -7,7 +7,8 @@ public class BinaryToDecimal {
         } else {
             char lastDigit = binary.charAt(binary.length() - 1);
             String remainingBinary = binary.substring(0, binary.length() - 1);
-            return 2 * binaryToDecimal(remainingBinary) + Character.getNumericValue(lastDigit);
+            int a = Character.getNumericValue(lastDigit);
+            return 2 * binaryToDecimal(remainingBinary) + a;
         }
     }
 
