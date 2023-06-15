@@ -11,8 +11,6 @@ public class Permutation {
 			list.add("");
 			return list;
 		}
-		
-		
 		// small problem
 		char firstChar = str.charAt(0);
 		ArrayList<String> result = new ArrayList<>();
@@ -26,10 +24,7 @@ public class Permutation {
 				result.add(sb.toString());
 			}
 		}
-		
 		return result;
-		
-		
 	}
 
 	public static void main(String[] args) {
