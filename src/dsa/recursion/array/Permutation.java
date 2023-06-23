@@ -11,9 +11,10 @@ public class Permutation {
 			list.add("");
 			return list;
 		}
-		// small problem
+		
 		char firstChar = str.charAt(0);
 		ArrayList<String> result = new ArrayList<>();
+		// small problem
 		ArrayList<String> list = getPerm(str.substring(1));
 		
 		// logic

@@ -5,7 +5,6 @@ public class SubSequenceVoid {
 	private static void subSequence(String str, String result) {
 		
 		// base case
-		
 		if(str.length() == 0) {
 			System.out.println(result);
 			return;

@@ -1,6 +1,8 @@
 package dsa.recursion.array;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 
 public class SubSequence {
 	
@@ -12,7 +14,6 @@ public class SubSequence {
 			list.add("");
 			return list;
 		}
-		
 		
 		// small problem
 		char firstChar = str.charAt(0);
@@ -34,7 +35,10 @@ public class SubSequence {
 		// TODO Auto-generated method stub
 		
 		ArrayList<String> list = occurences("harsh");
-		System.out.println(list);
+		HashSet<String> h = new HashSet<>(list);
+        ArrayList<String> list2 = new ArrayList<>(h);
+        Collections.sort(list2);
+        System.out.println(list2);
 		
 	}
 
