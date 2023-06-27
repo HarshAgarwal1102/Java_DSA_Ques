@@ -1,6 +1,6 @@
-package dsa.array;
+package dsa.array.assignment3;
 
-public class RotateAnArray {
+public class LeetCodeQues189RotateArray {
 	static void reverse(int arr[], int low, int high){
         while(low<high){
             int temp = arr[low];
@@ -10,10 +10,8 @@ public class RotateAnArray {
             high--;
         }
     }
-    public static void main(String[] args) {
-        int rotations = -3;
-        int arr[] = {10,20,30,40,50}; 
-        // rotations must be in range
+
+    public void rotate(int[] arr, int rotations) {
         rotations = rotations % arr.length;
         // rotations negative
         if(rotations<0){
@@ -25,10 +23,5 @@ public class RotateAnArray {
         reverse(arr, arr.length-rotations, arr.length-1);
         // full reverse
         reverse(arr, 0, arr.length-1);
-        for(int ele : arr){
-            System.out.print(ele + " ");
-        }
-        System.out.println();
     }
-
 }
