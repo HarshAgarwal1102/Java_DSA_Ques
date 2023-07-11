@@ -1,6 +1,9 @@
 package dsa.tries;
 
-public class SearchInTries {
+import dsa.tries.SearchInTries.Node;
+
+public class DeletionInTries {
+
 	static class Node{
         Node[] children;
         boolean IsTerminal;
@@ -27,13 +30,11 @@ public class SearchInTries {
 
             if(i==word.length()-1){
                 current.children[index].IsTerminal = true;
-                // System.out.println("WORD INSERTED :" + word);
+                System.out.println("Inserted Word: " + word);
              }
             current = current.children[index];
         }
     }
-
-
     static boolean search(String word){
         Node current = root;
         for(int i=0;i<word.length();i++){
@@ -53,12 +54,39 @@ public class SearchInTries {
         }
         return true;
     }
+    static boolean delete(String word){
+        Node current = root;
+        for(int i=0;i<word.length();i++){
+            int index = word.charAt(i) - 'a';
+
+            Node node = current.children[index];
+
+            if(node == null){
+                return false;
+            }
+            if(i == word.length()-1 && node.IsTerminal == false){
+                return false;
+            }
+            if(i == word.length()-1 && node.IsTerminal == true) {
+            	node.IsTerminal = false;
+            	return true;
+            }
+
+            current = current.children[index];
+        }
+        return false;
+    }
+    
 
     public static void main(String[] args) {
         insert("apple");
         insert("bag");
-        insert("ball");
-        insert("queen");
-        System.out.println(search("ball"));
+        insert("appe");
+        
+        String ans = (delete("appea")) ? "Word Deleted Successfully":"Word is not present";
+        System.out.println(ans);
+        
+        System.out.println(search("appe"));
     }
+
 }

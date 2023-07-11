@@ -32,15 +32,15 @@ public class PrefixInTries {
         }
     }
 
-    static void insertSuffix(String word){
+    static void insertPrefix(String word){
         for(int i=1;i<=word.length(); i++){
-            String suffix = word.substring(0,i);
-            insert(suffix);
+            String prefix = word.substring(0,i);
+            insert(prefix);
         }
     }
 
     public static void main(String[] args) {
-        insertSuffix("brain");
+        insertPrefix("brain");
         // System.out.println(insert("brain"));
     }
 }

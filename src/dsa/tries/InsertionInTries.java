@@ -27,7 +27,7 @@ public class InsertionInTries {
 
             if(i==word.length()-1){
                 current.children[index].IsTerminal = true;
-                System.out.println("WORD INSERTED :" + word);
+                System.out.println("Inserted Word: " + word);
              }
             current = current.children[index];
         }
