@@ -1,4 +1,4 @@
-class DetectAndRemoveCycle
+class GFGQuesDetectAndRemoveCycle
 {
     //Function to remove a loop in the linked list.
     public static void removeLoop(Node head){
