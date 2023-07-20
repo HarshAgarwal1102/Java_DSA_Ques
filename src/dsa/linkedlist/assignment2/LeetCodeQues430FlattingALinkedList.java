@@ -1,4 +1,4 @@
-class LeetCodeQues430FlattingALinkedList {
+class Solution {
     public Node flatten(Node head) {
         Node curr=head;
         while(curr!=null){
