@@ -1,4 +1,4 @@
-class LeetCodeQues146LRUCache {
+class Solution {
     Node head = new Node(0,0);
     Node tail = new Node(0,0);
     int capacity;
