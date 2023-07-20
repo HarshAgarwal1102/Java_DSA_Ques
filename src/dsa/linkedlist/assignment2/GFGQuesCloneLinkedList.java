@@ -1,4 +1,4 @@
-class GFGQuesCloneLinkedList {
+class Solution {
     //Function to clone a linked list with next and random pointer.
     Node copyList(Node head) {
         // your code here
