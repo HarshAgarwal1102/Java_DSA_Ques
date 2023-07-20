@@ -1,4 +1,4 @@
-class GFGQuesSplitCircularLinkedListIntoTwoHalves
+class Solution
 {
         // Function  to split a circular LinkedList
 	    void splitList(circular_LinkedList list)
