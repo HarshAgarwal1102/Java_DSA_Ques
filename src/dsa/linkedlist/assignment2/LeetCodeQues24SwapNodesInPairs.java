@@ -1,4 +1,4 @@
-class LeetCodeQues24SwapNodesInPairs {
+class Solution {
     public ListNode swapPairs(ListNode head) {
         //base case
         if(head == null || head.next == null)
