@@ -1,4 +1,4 @@
-class LeetCodeQues206ReverseLinkedList {
+class Solution {
     public ListNode reverseList(ListNode head) {
 
 // iterative approach
