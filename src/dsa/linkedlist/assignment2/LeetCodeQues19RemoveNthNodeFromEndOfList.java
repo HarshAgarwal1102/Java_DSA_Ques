@@ -1,4 +1,4 @@
-Class LeetCodeQues19RemoveNthNodeFromEndOfList{
+Class Solution{
 public class ListNode {
       int val;
       ListNode next;
