@@ -1,7 +1,6 @@
 class Solution {
 
     static int result;
-
     public int sumOfLeftLeaves(TreeNode root) {
         result = 0;
 
