@@ -35,7 +35,6 @@ public class MaxHeap {
             System.out.println("HEAP IS FULL....");
             return;
         }
-
         int current = size;
         heap[size++] = value;
 
