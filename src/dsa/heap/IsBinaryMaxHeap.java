@@ -9,7 +9,7 @@ class TreeNode{
 }
 public class IsBinaryMaxHeap {
 
-    public static boolean isMinHeap(TreeNode root){
+    public static boolean isMaxHeap(TreeNode root){
         return helper(root, Integer.MAX_VALUE);
     }
 
