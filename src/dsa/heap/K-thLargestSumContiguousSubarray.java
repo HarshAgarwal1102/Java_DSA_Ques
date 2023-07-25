@@ -6,10 +6,17 @@ class Solution {
         for(int i=0; i<Arr.length; i++){
             int sum=0;
             for(int j=i; j<Arr.length; j++){
-                sum+=Arr[j];
-                pQ.add(sum);
-                if(pQ.size()>K) 
-                    pQ.remove();
+                sum += Arr[j];
+                
+                if(pQ.size() < K){
+                    pQ.add(sum);
+                }
+                else{
+                    if(sum > pQ.peek()){
+                        pQ.poll();
+                        pQ.offer(sum);
+                    }
+                }
             }
         }
         return pQ.peek();
