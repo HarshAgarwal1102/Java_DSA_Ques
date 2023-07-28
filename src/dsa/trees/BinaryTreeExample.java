@@ -212,7 +212,6 @@ class BinaryTreeOperations{
         }
         printRightView(root.right, currentLevel+1);
         printRightView(root.left, currentLevel+1);
-       
     }
 
     void printLeftViewIterative(BinaryTreeNode<Integer> root){
