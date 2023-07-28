@@ -234,7 +234,6 @@ class BinaryTreeOperations{
                     queue.add(currentNode.right);
                 }
             }
-
         }
     }
 
