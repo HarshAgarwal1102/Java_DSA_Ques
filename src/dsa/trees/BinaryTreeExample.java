@@ -175,6 +175,7 @@ class BinaryTreeOperations{
             }
         }
     }
+    
     int height (BinaryTreeNode<Integer> root){
         if(root == null){
             return 0; // Empty Tree Height is 0
@@ -184,6 +185,7 @@ class BinaryTreeOperations{
         int value = Math.max(leftHeight, rightHeight);
         return value + 1;
     }
+    
     int maxLevel = 0;
     void printLeftView(BinaryTreeNode<Integer> root, int currentLevel){
         // Termination Case
