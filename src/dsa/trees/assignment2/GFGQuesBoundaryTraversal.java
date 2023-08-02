@@ -1,19 +1,5 @@
 class Solution
 {
-    ArrayList <Integer> boundary(Node node)
-    {
-        ArrayList<Integer> ans = new ArrayList<Integer>();
-        if(node.left == null  && node.right == null){
-            ans.add(node.data);
-            return ans;
-        }
-        ans.add(node.data);
-        addLeftNodes(node.left , ans);
-        addLeafNodes(node , ans);
-        addRightNodes(node.right , ans);
-        return ans;
-    }
-    
     void addLeftNodes(Node node , ArrayList<Integer> ans){
         if(node == null)    return;
         
@@ -29,14 +15,16 @@ class Solution
     }
     
     void addLeafNodes(Node node , ArrayList<Integer> ans){
-        if(node == null)    return;
-        addLeafNodes(node.left , ans);
-        addLeafNodes(node.right , ans);
-        
+        if(node == null)    
+            return;
+    
         if(node.left ==null && node.right == null){
             ans.add(node.data);
+            return;
         }
-        return;
+        
+        addLeafNodes(node.left , ans);
+        addLeafNodes(node.right , ans);
     }
     
     void addRightNodes(Node node , ArrayList<Integer> ans){
@@ -51,5 +39,22 @@ class Solution
             ans.add(node.data);
         }
     }
+    
+    ArrayList <Integer> boundary(Node node)
+    {
+        ArrayList<Integer> ans = new ArrayList<Integer>();
+        if(node.left == null  && node.right == null){
+            ans.add(node.data);
+            return ans;
+        }
+        ans.add(node.data);
+        // left Nodes
+        addLeftNodes(node.left , ans);
+        // leaf Nodes
+        addLeafNodes(node, ans);
+        // right Nodes
+        addRightNodes(node.right , ans);
+        
+        return ans;
+    }
 }
-
