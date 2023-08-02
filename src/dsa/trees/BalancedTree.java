@@ -1,29 +1,27 @@
-class Pair{
-    int data;
-    boolean isSum;
-    Pair(int d,boolean i){
-        data = d;
-        isSum = i;
-    }
-}
 class Tree
 {
-    private Pair checkBalance(Node root) {
-        if (root == null)
-            return new Pair(0, true);
-
-        Pair left = checkBalance(root.left);
-        Pair right = checkBalance(root.right);
-
-        int height = Math.max(left.data, right.data) + 1;
-        boolean balanced = left.isSum && right.isSum && Math.abs(left.data - right.data) <= 1;
-
-        return new Pair(height, balanced);
-    }
     //Function to check whether a binary tree is balanced or not.
+    public static int height(Node root){
+        if(root == null){
+            return 0;
+        }
+        
+        return Math.max(height(root.left), height(root.right) ) + 1 ;
+        
+    }
+    
     boolean isBalanced(Node root)
     {
-    	Pair result = checkBalance(root);
-        return result.isSum;
+	// Your code here
+	    if(root==null)
+            return true;
+    
+    
+        int leftH = height(root.left);
+        int rightH =height(root.right);
+    
+        int diff = Math.abs(leftH-rightH);
+    
+        return diff<=1 && isBalanced(root.left) && isBalanced(root.right);
     }
 }
